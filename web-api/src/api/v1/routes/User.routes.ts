@@ -17,7 +17,7 @@ export default [
 	 *       400:
 	 *         description: Bad request
 	 */
-	router.get(
+	router.post(
 		'/users',
 		[authenticate, rateLimiterThreeSeconds],
 		userControllers.getUsers
