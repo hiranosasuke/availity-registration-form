@@ -9,9 +9,9 @@ import { Person } from '../../interfaces/user.interface';
 export class UserService {
   constructor(private webReqService: WebRequestService) {}
 
-  signup(user: any): Promise<Person> {
+  signup(user: Person): Promise<Person> {
     return new Promise((resolve, reject) => {
-      this.webReqService.post('user', user).subscribe(
+      this.webReqService.post('users', user).subscribe(
         (res: ClientResponse<Person>) => {
           if (res.isSuccess) {
             resolve(res.result);

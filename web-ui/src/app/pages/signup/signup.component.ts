@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Person } from 'src/app/core/interfaces/user.interface';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +12,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar) {}
+  constructor(
+    private fb: FormBuilder,
+    private _snackBar: MatSnackBar,
+    private userService: UserService
+  ) {}
 
   ngOnInit() {
     this.buildForm();
@@ -29,6 +35,11 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     if (this.signupForm.valid) {
+      this.userService
+        .signup(this.signupForm.getRawValue())
+        .then((info: Person) => {})
+        .catch((err: any) => {})
+        .finally(() => {});
     } else {
       this._snackBar.open('Please fill out all required fields', 'Close', {
         duration: 3000,
