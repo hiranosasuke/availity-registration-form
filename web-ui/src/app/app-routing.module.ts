@@ -11,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [SignupComponent],
+  declarations: [SignupComponent, LoginComponent],
   imports: [SharedModule, RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
