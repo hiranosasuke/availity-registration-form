@@ -6,12 +6,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { HeaderComponent } from '../layout/header/header.component';
 
 const MODULES = [
   MatInputModule,
   MatCardModule,
   MatButtonModule,
   MatSnackBarModule,
+  MatToolbarModule,
+  MatIconModule,
 ];
 
 @NgModule({
@@ -28,6 +33,8 @@ const MODULES = [
     ReactiveFormsModule,
     HttpClientModule,
     ...MODULES,
+    HeaderComponent,
   ],
+  declarations: [HeaderComponent],
 })
 export class SharedModule {}
