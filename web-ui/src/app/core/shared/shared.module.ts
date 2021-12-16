@@ -9,6 +9,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from '../layout/header/header.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 const MODULES = [
   MatInputModule,
@@ -17,6 +19,8 @@ const MODULES = [
   MatSnackBarModule,
   MatToolbarModule,
   MatIconModule,
+  MatTableModule,
+  MatPaginatorModule,
 ];
 
 @NgModule({
