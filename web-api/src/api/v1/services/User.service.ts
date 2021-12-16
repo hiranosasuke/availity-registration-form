@@ -5,6 +5,11 @@ const signupUser = (info: IUser) => {
 	return userRepositories.signupUser(info);
 };
 
+const getAllUsers = () => {
+	return userRepositories.getAllUsers();
+};
+
 export default {
 	signupUser,
+	getAllUsers,
 };

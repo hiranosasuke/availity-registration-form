@@ -4,7 +4,17 @@ import { ClientResponse } from '../utilities/client-response';
 
 const signupUser = async (req: Request, res: Response) => {
 	try {
-		const users = await userServices.signupUser(req.body);
+		const user = await userServices.signupUser(req.body);
+		const result = new ClientResponse(true, user, '');
+		res.status(200).send(result);
+	} catch (error) {
+		res.status(400).send(error);
+	}
+};
+
+const getAllUsers = async (req: Request, res: Response) => {
+	try {
+		const users = await userServices.getAllUsers();
 		const result = new ClientResponse(true, users, '');
 		res.status(200).send(result);
 	} catch (error) {
@@ -14,4 +24,5 @@ const signupUser = async (req: Request, res: Response) => {
 
 export default {
 	signupUser,
+	getAllUsers,
 };

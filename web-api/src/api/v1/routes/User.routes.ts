@@ -22,4 +22,10 @@ export default [
 		[authenticate, rateLimiterThreeSeconds],
 		userControllers.signupUser
 	),
+
+	router.get(
+		'/users',
+		[authenticate, rateLimiterThreeSeconds],
+		userControllers.getAllUsers
+	),
 ];

@@ -2,13 +2,22 @@ import { IUser } from '../interfaces/User.interface';
 import User from '../models/User.model';
 
 const signupUser = (info: IUser) => {
-	let newGenderName = new User(info);
+	let newUser = new User(info);
 
-	return newGenderName.save().then((gender: IUser) => {
-		return gender;
+	return newUser.save().then((user: IUser) => {
+		return user;
 	});
+};
+
+const getAllUsers = () => {
+	return User.find()
+		.sort({ firstName: 1 })
+		.then((users: IUser[]) => {
+			return users;
+		});
 };
 
 export default {
 	signupUser,
+	getAllUsers,
 };
