@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar) {}
+  constructor(
+    private fb: FormBuilder,
+    private _snackBar: MatSnackBar,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.buildForm();
@@ -19,12 +24,12 @@ export class LoginComponent implements OnInit {
   buildForm() {
     this.loginForm = this.fb.group({
       emailAddress: [null, Validators.required],
-      password: [null, Validators.required],
     });
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
+      this.router.navigate(['home']);
     } else {
       this._snackBar.open('Please fill out all required fields', 'Close', {
         duration: 3000,
