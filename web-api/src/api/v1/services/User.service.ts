@@ -1,9 +1,10 @@
+import { IUser } from '../interfaces/User.interface';
 import userRepositories from '../repositories/User.repository';
 
-const getUsers = () => {
-	return userRepositories.getUsers();
+const signupUser = (info: IUser) => {
+	return userRepositories.signupUser(info);
 };
 
 export default {
-	getUsers,
+	signupUser,
 };

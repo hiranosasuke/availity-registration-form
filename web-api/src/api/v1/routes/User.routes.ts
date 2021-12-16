@@ -9,8 +9,8 @@ export default [
 	/**
 	 * @swagger
 	 * /api/v1/users:
-	 *   get:
-	 *     description: Get all users
+	 *   post:
+	 *     description: Signup User
 	 *     responses:
 	 *       200:
 	 *         description: Successful response
@@ -20,6 +20,6 @@ export default [
 	router.post(
 		'/users',
 		[authenticate, rateLimiterThreeSeconds],
-		userControllers.getUsers
+		userControllers.signupUser
 	),
 ];
