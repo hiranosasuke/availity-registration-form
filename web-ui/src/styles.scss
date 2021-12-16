@@ -29,14 +29,18 @@ mat-card {
 }
 
 .centered-table {
-  margin-left: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 10vw;
-  width: 80%;
-  max-height: fit-content;
+  width: 90%;
 }
 
 table {
   width: 100%;
+}
+
+mat-paginator {
+  width: 100% !important;
 }
 
 .full-width {

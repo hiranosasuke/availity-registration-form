@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from '../layout/header/header.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 const MODULES = [
   MatInputModule,
@@ -21,6 +22,7 @@ const MODULES = [
   MatIconModule,
   MatTableModule,
   MatPaginatorModule,
+  MatSidenavModule,
 ];
 
 @NgModule({
