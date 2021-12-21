@@ -1,6 +1,6 @@
 # availity-registration-form
 
-Full stack MEAN application coding excersise. Create a registration user interface so healthcare providers can join. In order to run the applications for the front-end and the back-end, there are a few steps to take:
+Full stack MEAN application coding exercise. Create a registration user interface so healthcare providers can join. In order to run the applications for the front-end and the back-end, there are a few steps to take:
 
 ### Node
 
