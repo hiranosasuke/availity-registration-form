@@ -9,7 +9,8 @@ Full stack MEAN application coding exercise. Create a registration user interfac
 
 ### Front-end
 
-Navigate into the web-ui folder. Run `npm i` and then run `ng serve`
+- Navigate into the web-ui folder. Run `npm i` and then run `ng serve`
+- In order to utilize the CSV Parser page, please have this C# application running also (https://github.com/hiranosasuke/availity-csv)
 
 ### Back-end
 
