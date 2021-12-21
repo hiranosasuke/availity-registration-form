@@ -14,4 +14,4 @@ Full stack MEAN application coding exercise. Create a registration user interfac
 
 ### Back-end
 
-Navigate into the web-api folder. You will require a .env file to be created with DB_USER, DB_PASS, DB_NAME to be able to connect to the DB. The actual values are not there so please create a mongoDB database beforehand. 
+- Navigate into the web-api folder. You will require a .env file to be created with DB_USER, DB_PASS, DB_NAME to be able to connect to the DB. The actual values are not there so please create a mongoDB database beforehand. 
