@@ -17,7 +17,14 @@ const getAllUsers = () => {
 		});
 };
 
+const getUserByEmail = (email: string) => {
+	return User.findOne({ emailAddress: email }).then((users: IUser | null) => {
+		return users!;
+	});
+};
+
 export default {
 	signupUser,
 	getAllUsers,
+	getUserByEmail,
 };

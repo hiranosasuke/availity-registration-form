@@ -28,4 +28,10 @@ export default [
 		[authenticate, rateLimiterThreeSeconds],
 		userControllers.getAllUsers
 	),
+
+	router.get(
+		'/users/email',
+		[authenticate, rateLimiterThreeSeconds],
+		userControllers.getUserByEmail
+	),
 ];

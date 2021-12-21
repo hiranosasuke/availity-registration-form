@@ -9,7 +9,12 @@ const getAllUsers = () => {
 	return userRepositories.getAllUsers();
 };
 
+const getUserByEmail = (email: string) => {
+	return userRepositories.getUserByEmail(email);
+};
+
 export default {
 	signupUser,
 	getAllUsers,
+	getUserByEmail,
 };
