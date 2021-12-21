@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/core/shared/shared.module';
+import { CsvReaderComponent } from './csv-reader/csv-reader.component';
 import { HomeComponent } from './home.component';
 
 const routes: Routes = [
@@ -8,9 +9,14 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
+  {
+    path: 'csv',
+    component: CsvReaderComponent,
+  },
 ];
 
 @NgModule({
+  declarations: [CsvReaderComponent],
   imports: [SharedModule, RouterModule.forChild(routes)],
   exports: [RouterModule, SharedModule],
 })
