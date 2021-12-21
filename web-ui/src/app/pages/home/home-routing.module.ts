@@ -9,14 +9,17 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-  },
-  {
-    path: 'csv',
-    component: CsvReaderComponent,
-  },
-  {
-    path: 'users',
-    component: UsersComponent,
+    children: [
+      {
+        path: 'csv',
+        component: CsvReaderComponent,
+      },
+      {
+        path: 'users',
+        component: UsersComponent,
+      },
+      { path: '**', component: UsersComponent },
+    ],
   },
 ];
 
