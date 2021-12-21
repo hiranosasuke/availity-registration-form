@@ -12,6 +12,9 @@ import { HeaderComponent } from '../layout/header/header.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { SidenavComponent } from '../layout/sidenav/sidenav.component';
+import { MatListModule } from '@angular/material/list';
+import { RouterModule } from '@angular/router';
 
 const MODULES = [
   MatInputModule,
@@ -23,6 +26,7 @@ const MODULES = [
   MatTableModule,
   MatPaginatorModule,
   MatSidenavModule,
+  MatListModule,
 ];
 
 @NgModule({
@@ -31,6 +35,7 @@ const MODULES = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule,
     ...MODULES,
   ],
   exports: [
@@ -40,7 +45,8 @@ const MODULES = [
     HttpClientModule,
     ...MODULES,
     HeaderComponent,
+    SidenavComponent,
   ],
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, SidenavComponent],
 })
 export class SharedModule {}

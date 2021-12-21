@@ -3,11 +3,12 @@
     mat-icon-button
     class="example-icon"
     aria-label="Example icon-button with share icon"
+    (click)="onSideNavToggle()"
   >
     <mat-icon>menu</mat-icon>
   </button>
   &nbsp;
-  <span>Availity</span>
+  <span style="cursor: pointer" (click)="navigateToHome()">Availity</span>
   <span class="example-spacer"></span>
   <button
     mat-icon-button
