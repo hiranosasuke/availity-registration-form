@@ -3,8 +3,22 @@
     <mat-card-title> Welcome! </mat-card-title>
 
     <mat-card-content>
+      <p>
+        Please upload a CSV file to separate enrollees by the insurance company
+        in its own file. Additionally, it will sort the contents of each file by
+        last and first name (ascending). Lastly, if there are duplicate User Ids
+        for the same Insurance Company, then only the record with the highest
+        version will be included.
+      </p>
+
+      <p>
+        <a href="assets/Example.csv" target="_self" download
+          ><span style="color: darkcyan">Download template HERE</span></a
+        >
+      </p>
+
       <button mat-raised-button (click)="file.click()" color="primary">
-        Submit
+        Upload
       </button>
       <input
         type="file"
