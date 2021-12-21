@@ -7,8 +7,16 @@
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Email Address</mat-label>
           <input matInput required formControlName="emailAddress" />
+          <mat-error *ngIf="(loginForm.get('emailAddress')?.errors)!['email']"
+            >Please enter a valid email</mat-error
+          >
+          <mat-error
+            *ngIf="(loginForm.get('emailAddress')?.errors)!['required']"
+            >Required</mat-error
+          >
         </mat-form-field>
 
+        <br /><br />
         <button (click)="onSubmit()" mat-raised-button color="primary">
           Submit
         </button>

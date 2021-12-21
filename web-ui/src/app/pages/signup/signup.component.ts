@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
       npiNumber: [null, Validators.required],
       businessAddress: [null, Validators.required],
       phoneNumber: [null, Validators.required],
-      emailAddress: [null, Validators.required],
+      emailAddress: [null, [Validators.required, Validators.email]],
     });
   }
 

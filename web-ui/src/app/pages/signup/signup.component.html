@@ -9,33 +9,83 @@
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>First Name</mat-label>
           <input matInput required formControlName="firstName" />
+          <mat-error
+            *ngIf="
+              signupForm.get('firstName')!.errors! &&
+              signupForm.get('firstName')!.errors!['required']
+            "
+            >Required</mat-error
+          >
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Last Name</mat-label>
           <input matInput required formControlName="lastName" />
+          <mat-error
+            *ngIf="
+              signupForm.get('lastName')!.errors! &&
+              signupForm.get('lastName')!.errors!['required']
+            "
+            >Required</mat-error
+          >
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>NPI Number</mat-label>
           <input matInput required formControlName="npiNumber" />
+          <mat-error
+            *ngIf="
+              signupForm.get('npiNumber')!.errors! &&
+              signupForm.get('npiNumber')!.errors!['required']
+            "
+            >Required</mat-error
+          >
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Business Address</mat-label>
           <input matInput required formControlName="businessAddress" />
+          <mat-error
+            *ngIf="
+              signupForm.get('businessAddress')!.errors! &&
+              signupForm.get('businessAddress')!.errors!['required']
+            "
+            >Required</mat-error
+          >
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Telephone Number</mat-label>
           <input matInput required formControlName="phoneNumber" />
+          <mat-error
+            *ngIf="
+              signupForm.get('phoneNumber')!.errors! &&
+              signupForm.get('phoneNumber')!.errors!['required']
+            "
+            >Required</mat-error
+          >
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Email Address</mat-label>
           <input matInput required formControlName="emailAddress" />
+          <mat-error
+            *ngIf="
+              signupForm.get('emailAddress')!.errors! &&
+              signupForm.get('emailAddress')!.errors!['email']
+            "
+            >Please enter a valid email</mat-error
+          >
+          <mat-error
+            *ngIf="
+              signupForm.get('emailAddress')!.errors! &&
+              signupForm.get('emailAddress')!.errors!['required']
+            "
+            >Required</mat-error
+          >
         </mat-form-field>
 
+        <br /><br />
         <button (click)="onSubmit()" mat-raised-button color="primary">
           Submit
         </button>
