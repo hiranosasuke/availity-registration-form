@@ -48,6 +48,21 @@ export class UserService {
     });
   }
 
+  getUserByEmail(email: string): Promise<Person> {
+    return new Promise((resolve, reject) => {
+      this.webReqService.get('users/email?email=' + email).subscribe(
+        (res: ClientResponse<Person>) => {
+          if (res.isSuccess) {
+            resolve(res.result);
+          }
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    });
+  }
+
   uploadFile(files: FileList) {
     let fileToUpload = <File>files[0];
     const formData = new FormData();
