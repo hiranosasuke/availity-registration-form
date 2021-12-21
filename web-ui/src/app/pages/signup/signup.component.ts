@@ -42,7 +42,14 @@ export class SignupComponent implements OnInit {
         .then((info: Person) => {
           this.router.navigate(['home']);
         })
-        .catch((err: any) => {})
+        .catch((err: any) => {
+          if (err.error.errors?.emailAddress?.kind === 'unique') {
+            this._snackBar.open('Email already exists', 'Close', {
+              duration: 3000,
+              verticalPosition: 'top',
+            });
+          }
+        })
         .finally(() => {});
     } else {
       this._snackBar.open('Please fill out all required fields', 'Close', {

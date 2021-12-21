@@ -1,5 +1,6 @@
 import { model, Schema } from 'mongoose';
 import { IUserModel, IUserDocument } from '../interfaces/User.interface';
+import uniqueValidator from 'mongoose-unique-validator';
 
 export const UserSchema = new Schema({
 	firstName: {
@@ -36,9 +37,12 @@ export const UserSchema = new Schema({
 		type: String,
 		minlength: 1,
 		trim: true,
+		unique: true,
 		required: [true, 'Email address required'],
 	},
 });
+
+UserSchema.plugin(uniqueValidator);
 
 const User: IUserModel = model<IUserDocument, IUserModel>(
 	'User',
